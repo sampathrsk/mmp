@@ -1,0 +1,32 @@
+#!/bin/bash
+apt-get update
+apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+apt-get update
+apt-get install docker-ce=17.03.2~ce-0~ubuntu-xenial -y
+apt-get update && apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+systemctl start docker.service
+apt-get install openssl shellinabox -y
+cd /etc/default
+sed -i 's/SHELLINABOX_PORT=4200/SHELLINABOX_PORT=443/g' shellinabox
+invoke-rc.d shellinabox restart
+cd /etc/ssh
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' sshd_config
+sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/g' sshd_config
+echo -e "capgtraining\ncapgtraining" | passwd ubuntu
+service sshd restart

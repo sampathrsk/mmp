@@ -1,0 +1,24 @@
+#!/bin/bash
+#if [ ! -f "/root/.kube/config-sample-eks" ]; then
+#cp /root/.kube/config-sample-eks_bk /root/.kube/config-sample-eks
+#fi
+
+set x
+export KUBECONFIG=$KUBECONFIG:~/.kube/config-sample-eks
+kubectl get svc
+kubectl apply -f aws-auth-cm.yaml
+sleep 30
+
+sed "s@cmdb@$(cat /home/ubuntu/venv/mmp/aws/imagename.txt)@" /home/ubuntu/venv/mmp/aws/docker-dep.yaml > /home/ubuntu/venv/mmp/aws/docker-deployment.yaml
+
+kubectl create -f docker-deployment.yaml
+kubectl create -f docker-service.yaml
+
+sleep 90
+kubectl get services -o wide
+
+rm docker-url.txt
+
+kubectl get svc docker-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].hostname}" > /home/ubuntu/venv/mmp/aws/docker-url.txt
+

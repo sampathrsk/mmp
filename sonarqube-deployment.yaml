@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: sonarqube-deployment
+ labels:
+   app: sonarqube
+spec:
+ template:
+  metadata:
+   name: sonarqube-pod
+   labels:
+    app: sonarqube
+  spec:
+    containers:
+     - name: sonarqube
+       image: sonarqube
+#Mention the number of pods it has to create
+ replicas: 1
+ selector:
+  matchLabels:
+    app: sonarqube
+

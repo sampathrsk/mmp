@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMP</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="logo">
+            <img src="{% static 'Capgemini-Logo-2017.svg' %}" alt="Capgemini">
+        </div>
+        <h1>MMP</h1>
+        {{ registration_form.non_field_errors }}
+        <form class="register-form" action="/register/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+            <table cellspacing="50">
+                <tr>
+                    <td>
+                        <label for="username">User Name*</label>
+                    </td>
+                    <td>
+                        {{ registration_form.username }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password*</label>
+                    </td>
+                    <td>
+                        {{ registration_form.password }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">E-Mail*</label>
+                    </td>
+                    <td>
+                        {{ registration_form.email }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="first_name">First Name</label>
+                    </td>
+                    <td>
+                        {{ registration_form.first_name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="last_name">Last Name</label>
+                    </td>
+                    <td>
+                        {{ registration_form.last_name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="save" value="Save">
+                    </td>
+                    <td>
+                        <input type="button" name="back" value="Back to Login Page" onclick="location.href='/sparc/login/'">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

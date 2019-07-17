@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: docker-deployment
+ labels:
+   app: docker
+spec:
+ template:
+  metadata:
+   name: docker-pod
+   labels:
+    app: docker
+  spec:
+    containers:
+     - name: docker
+       image: cmdb
+
+#Mention the number of pods it has to create
+ replicas: 1
+ selector:
+  matchLabels:
+    app: docker

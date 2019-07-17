@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ -f "/root/.kube/config-sample-eks" ]; then
+mv /root/.kube/config-sample-eks /root/.kube/config-sample-eks_bk
+fi

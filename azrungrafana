@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#sudo -u ubuntu bash <<EOF
+kubectl port-forward --namespace=monitoring $(kubectl get pods --namespace=monitoring --selector=app=grafana --output=jsonpath='{.items[*].metadata.name}') 3000:3000
+#EOF

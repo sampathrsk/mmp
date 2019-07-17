@@ -1,0 +1,61 @@
+xenial	server	release	20180522	ebs-ssd	amd64	us-east-1	ami-e5d9439a	aki-919dcaf8		paravirtual
+xenial	server	release	20180522	instance-store	amd64	us-east-1	ami-c5cf55ba			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	us-east-1	ami-a4dc46db			hvm
+xenial	server	release	20180522	instance-store	amd64	us-east-1	ami-20cb515f	aki-919dcaf8		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	us-west-1	ami-37938b57	aki-880531cd		paravirtual
+xenial	server	release	20180522	instance-store	amd64	us-west-1	ami-7c938b1c			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	us-west-1	ami-8d948ced			hvm
+xenial	server	release	20180522	instance-store	amd64	us-west-1	ami-40938b20	aki-880531cd		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	ap-northeast-2	ami-ac339bc2	aki-01a66b6f		paravirtual
+xenial	server	release	20180522	instance-store	amd64	ap-northeast-2	ami-1f319971			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	ap-northeast-2	ami-f030989e			hvm
+xenial	server	release	20180522	instance-store	amd64	ap-northeast-2	ami-0c329a62	aki-01a66b6f		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	ap-northeast-1	ami-5533ce2a	aki-176bf516		paravirtual
+xenial	server	release	20180522	instance-store	amd64	ap-northeast-1	ami-7a1be605			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	ap-northeast-1	ami-48a45937			hvm
+xenial	server	release	20180522	instance-store	amd64	ap-northeast-1	ami-1820dd67	aki-176bf516		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	sa-east-1	ami-63fca30f	aki-5553f448		paravirtual
+xenial	server	release	20180522	instance-store	amd64	sa-east-1	ami-fbc49b97			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	sa-east-1	ami-67fca30b			hvm
+xenial	server	release	20180522	instance-store	amd64	sa-east-1	ami-f4fea198	aki-5553f448		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	ap-southeast-1	ami-f7cefc8b	aki-503e7402		paravirtual
+xenial	server	release	20180522	instance-store	amd64	ap-southeast-1	ami-84b082f8			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	ap-southeast-1	ami-81cefcfd			hvm
+xenial	server	release	20180522	instance-store	amd64	ap-southeast-1	ami-3cb68440	aki-503e7402		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	ca-central-1	ami-cf20a0ab	aki-320ebd56		paravirtual
+xenial	server	release	20180522	instance-store	amd64	ca-central-1	ami-6322a207			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	ca-central-1	ami-7e21a11a			hvm
+xenial	server	release	20180522	instance-store	amd64	ca-central-1	ami-f01f9f94	aki-320ebd56		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	ap-southeast-2	ami-823cece0	aki-c362fff9		paravirtual
+xenial	server	release	20180522	instance-store	amd64	ap-southeast-2	ami-2f3eee4d			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	ap-southeast-2	ami-963cecf4			hvm
+xenial	server	release	20180522	instance-store	amd64	ap-southeast-2	ami-3d3eee5f	aki-c362fff9		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	us-west-2	ami-4e700e36	aki-fc8f11cc		paravirtual
+xenial	server	release	20180522	instance-store	amd64	us-west-2	ami-3b6a1443			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	us-west-2	ami-db710fa3			hvm
+xenial	server	release	20180522	instance-store	amd64	us-west-2	ami-b36b15cb	aki-fc8f11cc		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	us-east-2	ami-98023efd	aki-da055ebf		paravirtual
+xenial	server	release	20180522	instance-store	amd64	us-east-2	ami-2cfcc049			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	us-east-2	ami-6a003c0f			hvm
+xenial	server	release	20180522	instance-store	amd64	us-east-2	ami-c4003ca1	aki-da055ebf		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	ap-south-1	ami-acebc7c3	aki-a7305ac8		paravirtual
+xenial	server	release	20180522	instance-store	amd64	ap-south-1	ami-2de4c842			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	ap-south-1	ami-41e9c52e			hvm
+xenial	server	release	20180522	instance-store	amd64	ap-south-1	ami-daebc7b5	aki-a7305ac8		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	eu-central-1	ami-a9e2ca42	aki-184c7a05		paravirtual
+xenial	server	release	20180522	instance-store	amd64	eu-central-1	ami-1fe3cbf4			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	eu-central-1	ami-c7e0c82c			hvm
+xenial	server	release	20180522	instance-store	amd64	eu-central-1	ami-7ce4cc97	aki-184c7a05		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	eu-west-1	ami-85d7e8fc	aki-52a34525		paravirtual
+xenial	server	release	20180522	instance-store	amd64	eu-west-1	ami-3cd7e845			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	eu-west-1	ami-58d7e821			hvm
+xenial	server	release	20180522	instance-store	amd64	eu-west-1	ami-3ad7e843	aki-52a34525		paravirtual
+xenial	server	release	20180522	ebs-ssd	amd64	eu-west-2	ami-63ab4704	aki-8b6369ef		paravirtual
+xenial	server	release	20180522	instance-store	amd64	eu-west-2	ami-28a5494f			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	eu-west-2	ami-5daa463a			hvm
+xenial	server	release	20180522	instance-store	amd64	eu-west-2	ami-caa448ad	aki-8b6369ef		paravirtual
+xenial	server	release	20180522	instance-store	amd64	eu-west-3	ami-2f6fde52			hvm
+xenial	server	release	20180522	ebs-ssd	amd64	eu-west-3	ami-1960d164			hvm
+abd			hvm
+xenial	server	release	20180405	ebs-ssd	amd64	eu-west-3	ami-9a03b5e7			hvm
+xenial	server	release	20180405	instance-store	amd64	eu-west-3	ami-9b0fb9e6			hvm

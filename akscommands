@@ -1,0 +1,43 @@
+#!/bin/bash
+#if [ -f "/root/.kube/config-sample-eks" ]; then
+#mv /root/.kube/config-sample-eks /root/.kube/config-sample-eks_bk
+#fi
+
+#set x
+#export PATH="/usr/local/bin:$PATH"
+#sudo -u ubuntu bash <<EOF
+az aks get-credentials --resource-group MMP-Pranjal --name $(cat aksname.txt) --overwrite-existing
+#EOF
+export KUBECONFIG=$KUBECONFIG:~/.kube/config #/home/ubuntu/.kube/config
+#sudo -u ubuntu bash <<EOF
+kubectl get svc
+kubectl apply -f basic-azure-ad-binding.yaml
+#kubectl apply -f aws-auth-cm.yaml
+sleep 30
+
+kubectl create -f nexus-deployment.yaml
+kubectl create -f nexus-service.yaml
+kubectl create -f jenkins-deployment.yaml
+kubectl create -f jenkins-service.yaml
+kubectl create -f tomcat-deployment.yaml
+kubectl create -f tomcat-service.yaml
+
+sleep 240
+kubectl get services -o wide
+
+rm azjenkins.txt aznexus.txt pods.txt aztomcat.txt
+
+kubectl get svc jenkins-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].ip}" > /home/ubuntu/venv/mmp/aws/azjenkins.txt
+kubectl get svc nexus-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].ip}" > /home/ubuntu/venv/mmp/aws/aznexus.txt
+kubectl get svc tomcat-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].ip}" > /home/ubuntu/venv/mmp/aws/aztomcat.txt
+echo 'Load Balance Details are Copied'
+sleep 30
+sh nexus-repo.sh $(cat aznexus.txt)
+sleep 120
+sh jenkinsjobconfig.sh $(cat azjenkins.txt) $(cat git-reponame.txt) "" $(cat aznexus.txt)
+sleep 120
+sh tom.sh
+#EOF

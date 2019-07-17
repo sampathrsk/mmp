@@ -1,0 +1,22 @@
+#!/bin/bash
+rm -r /root/.helm/
+
+./get_helm.sh
+sleep 30
+kubectl apply -f rbac.yaml
+sleep 60
+helm init --service-account tiller
+sleep 30
+
+kubectl create -f prometheus-storageclass.yaml
+sleep 60
+helm install -f prometheus-values.yaml stable/prometheus --name prometheus --namespace prometheus
+sleep 30
+kubectl apply -f examples/grafana-dashboards.yaml
+sleep 30
+helm install -f grafana-values.yaml stable/grafana --name grafana --namespace grafana
+sleep 30
+export ELB=$(kubectl get svc -n grafana grafana -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+
+echo "http://$ELB" > grafana.txt
+echo "http://$ELB"

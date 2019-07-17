@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: jenkins-deployment
+ labels:
+   app: jenkins
+spec:
+ template:
+  metadata:
+   name: jenkins-pod
+   labels:
+    app: jenkins
+  spec:
+    containers:
+     - name: jenkins
+       image: sampathrsk/jenkins-sonar:lts
+#Mention the number of pods it has to create
+ replicas: 1
+ selector:
+  matchLabels:
+    app: jenkins
+

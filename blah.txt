@@ -1,0 +1,263 @@
+NAME              TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)          AGE
+jenkins-service   LoadBalancer   10.100.72.36     a458e8cba3f1c11e98e1602d2b0abbe9-1504297111.us-west-2.elb.amazonaws.com   8080:32272/TCP   47m
+kubernetes        ClusterIP      10.100.0.1       <none>                                                                    443/TCP          55m
+nexus-service     LoadBalancer   10.100.229.172   a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com    8081:30292/TCP   47m
+tomcat-service    LoadBalancer   10.100.205.199   a48062c0c3f1c11e98e1602d2b0abbe9-2005805269.us-west-2.elb.amazonaws.com   8082:32277/TCP   47m
+configmap/aws-auth unchanged
+NAME              TYPE           CLUSTER-IP       EXTERNAL-IP                                                               PORT(S)          AGE   SELECTOR
+jenkins-service   LoadBalancer   10.100.72.36     a458e8cba3f1c11e98e1602d2b0abbe9-1504297111.us-west-2.elb.amazonaws.com   8080:32272/TCP   49m   app=jenkins
+kubernetes        ClusterIP      10.100.0.1       <none>                                                                    443/TCP          58m   <none>
+nexus-service     LoadBalancer   10.100.229.172   a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com    8081:30292/TCP   49m   app=nexus
+tomcat-service    LoadBalancer   10.100.205.199   a48062c0c3f1c11e98e1602d2b0abbe9-2005805269.us-west-2.elb.amazonaws.com   8082:32277/TCP   49m   app=tomcat
+Load Balance Details are Copied
+ERROR: (ID 86078179-ca04-4afb-a590-2bd2a6a66b01) com.orientechnologies.orient.core.storage.ORecordDuplicatedException: Cannot index record #19:2: found duplicated key 'maven' in index 'script_name_idx' previously assigned to the record #19:0
+	DB name="config" INDEX=script_name_idx RID=#19:0ERROR: (ID 9d131674-727b-4049-b5b2-68b335bc712d) com.orientechnologies.orient.core.storage.ORecordDuplicatedException: Cannot index record #19:2: found duplicated key 'raw' in index 'script_name_idx' previously assigned to the record #19:1
+	DB name="config" INDEX=script_name_idx RID=#19:1{
+  "name" : "maven",
+  "result" : "javax.script.ScriptException: org.sonatype.goodies.common.MultipleFailures$MultipleFailuresException: Failed to initialize facets; 1 failure"
+}{
+  "name" : "raw",
+  "result" : "javax.script.ScriptException: org.sonatype.goodies.common.MultipleFailures$MultipleFailuresException: Failed to initialize facets; 1 failure"
+}Response code is 200 , Jenkins url is accessible
+Creating Jenkins job...
+<!DOCTYPE html><html><head resURL="/static/b14fd768" data-rooturl="" data-resurl="/static/b14fd768"> <title>Jenkins [Jenkins]</title><link rel="stylesheet" href="/static/b14fd768/css/layout-common.css" type="text/css" /><link rel="stylesheet" href="/static/b14fd768/css/style.css" type="text/css" /><link rel="stylesheet" href="/static/b14fd768/css/color.css" type="text/css" /><link rel="stylesheet" href="/static/b14fd768/css/responsive-grid.css" type="text/css" /><link rel="shortcut icon" href="/static/b14fd768/favicon.ico" type="image/vnd.microsoft.icon" /><link color="black" rel="mask-icon" href="/images/mask-icon.svg" /><script>var isRunAsTest=false; var rootURL=""; var resURL="/static/b14fd768";</script><script src="/static/b14fd768/scripts/prototype.js" type="text/javascript"></script><script src="/static/b14fd768/scripts/behavior.js" type="text/javascript"></script><script src='/adjuncts/b14fd768/org/kohsuke/stapler/bind.js' type='text/javascript'></script><script src="/static/b14fd768/scripts/yui/yahoo/yahoo-min.js"></script><script src="/static/b14fd768/scripts/yui/dom/dom-min.js"></script><script src="/static/b14fd768/scripts/yui/event/event-min.js"></script><script src="/static/b14fd768/scripts/yui/animation/animation-min.js"></script><script src="/static/b14fd768/scripts/yui/dragdrop/dragdrop-min.js"></script><script src="/static/b14fd768/scripts/yui/container/container-min.js"></script><script src="/static/b14fd768/scripts/yui/connection/connection-min.js"></script><script src="/static/b14fd768/scripts/yui/datasource/datasource-min.js"></script><script src="/static/b14fd768/scripts/yui/autocomplete/autocomplete-min.js"></script><script src="/static/b14fd768/scripts/yui/menu/menu-min.js"></script><script src="/static/b14fd768/scripts/yui/element/element-min.js"></script><script src="/static/b14fd768/scripts/yui/button/button-min.js"></script><script src="/static/b14fd768/scripts/yui/storage/storage-min.js"></script><script src="/static/b14fd768/scripts/hudson-behavior.js" type="text/javascript"></script><script src="/static/b14fd768/scripts/sortable.js" type="text/javascript"></script><script>crumb.init("", "");</script><link rel="stylesheet" href="/static/b14fd768/scripts/yui/container/assets/container.css" type="text/css" /><link rel="stylesheet" href="/static/b14fd768/scripts/yui/assets/skins/sam/skin.css" type="text/css" /><link rel="stylesheet" href="/static/b14fd768/scripts/yui/container/assets/skins/sam/container.css" type="text/css" /><link rel="stylesheet" href="/static/b14fd768/scripts/yui/button/assets/skins/sam/button.css" type="text/css" /><link rel="stylesheet" href="/static/b14fd768/scripts/yui/menu/assets/skins/sam/menu.css" type="text/css" /><link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Jenkins" /><meta name="ROBOTS" content="INDEX,NOFOLLOW" /><meta name="viewport" content="width=device-width, initial-scale=1" /><script src="/static/b14fd768/jsbundles/page-init.js" type="text/javascript"></script></head><body data-model-type="hudson.model.Hudson" id="jenkins" class="yui-skin-sam two-column jenkins-2.151" data-version="2.151"><a href="#skip2content" class="skiplink">Skip to content</a><div id="page-head"><div id="header"><div class="logo"><a id="jenkins-home-link" href="/"><img src="/static/b14fd768/images/headshot.png" alt="[Jenkins]" id="jenkins-head-icon" /><img src="/static/b14fd768/images/title.png" alt="Jenkins" width="139" id="jenkins-name-icon" height="34" /></a></div><div class="login"> <span style="white-space:nowrap"><a href="/user/cfs" class="model-link inside inverse"><b>cfs</b></a> | <a href="/logout"><b>log out</b></a></span></div><div class="searchbox hidden-xs"><form role="search" method="get" name="search" action="/search/" style="position:relative;" class="no-json"><div id="search-box-minWidth"></div><div id="search-box-sizer"></div><div id="searchform"><input role="searchbox" name="q" placeholder="search" id="search-box" class="has-default-text" /> <a href="https://jenkins.io/redirect/search-box"><img src="/static/b14fd768/images/16x16/help.png" style="width: 16px; height: 16px; " class="icon-help icon-sm" /></a><div id="search-box-completion"></div><script>createSearchBox("/search/");</script></div></form></div></div><div id="breadcrumbBar"><tr id="top-nav"><td id="left-top-nav" colspan="2"><link rel='stylesheet' href='/adjuncts/b14fd768/lib/layout/breadcrumbs.css' type='text/css' /><script src='/adjuncts/b14fd768/lib/layout/breadcrumbs.js' type='text/javascript'></script><div class="top-sticker noedge"><div class="top-sticker-inner"><div id="right-top-nav"></div><ul id="breadcrumbs"><li class="item"><a href="/" class="model-link inside">Jenkins</a></li><li href="/" class="children"></li></ul><div id="breadcrumb-menu-target"></div></div></div></td></tr></div></div><div id="page-body" class="clear"><div id="side-panel"></div><div id="main-panel"><a name="skip2content"></a><h1>Error</h1><p>A job already exists with the name ‘CICDjob’</p></div></div><footer><div class="container-fluid"><div class="row"><div class="col-md-6" id="footer"></div><div class="col-md-18"><span class="page_generated">Page generated: Mar 5, 2019 8:49:08 AM UTC</span><span class="rest_api"><a href="api/">REST API</a></span><span class="jenkins_ver"><a href="https://jenkins.io/">Jenkins ver. 2.151</a></span><link rel='stylesheet' href='/adjuncts/b14fd768/jenkins/management/AdministrativeMonitorsDecorator/resources.css' type='text/css' /><script src='/adjuncts/b14fd768/jenkins/management/AdministrativeMonitorsDecorator/resources.js' type='text/javascript'></script><div id="visible-am-container"><a onclick="toggleVisibleAmList(event)" id="visible-am-button" href="#" title="There are 6 active administrative monitors.">6</a><div id="visible-am-list"><div class="am-message"><div class="alert alert-info"> New version of Jenkins (2.167) is available for <a href="http://updates.jenkins-ci.org/download/war/2.167/jenkins.war">download</a> (<a href="https://jenkins.io/changelog">changelog</a>). </div></div><div class="am-message"><div class="alert alert-warning"><form method="post" name="jenkins.CLI" action="/administrativeMonitor/jenkins.CLI/act"><input name="yes" type="submit" value="Disable CLI over Remoting" class="submit-button primary" /><input name="no" type="submit" value="Dismiss" class="submit-button primary" /></form> Allowing Jenkins CLI to work in <code>-remoting</code> mode is considered dangerous and usually unnecessary. You are advised to disable this mode. Please refer to the <a href="https://jenkins.io/doc/book/managing/cli/" target="_blank">CLI documentation</a> for details. </div></div><div class="am-message"><div class="alert alert-warning"><form method="post" action="/administrativeMonitor/jenkins.diagnostics.RootUrlNotSetMonitor/disable"><input name="Submit" type="submit" value="Dismiss" class="submit-button primary" /></form>Jenkins root URL is empty but is required for the proper operation of many Jenkins features like email notifications, PR status update, and environment variables such as <code>BUILD_URL</code>.<p></p>Please provide an accurate value in <a href="/configure">Jenkins configuration</a>.</div></div><div class="am-message"><div class="alert alert-danger" role="alert"><form method="post" action="/administrativeMonitor/jenkins.security.UpdateSiteWarningsMonitor/forward"><input name="fix" type="submit" value="Go to plugin manager" class="submit-button primary" /><input name="configure" type="submit" value="Configure which of these warnings are shown" class="submit-button primary" /></form>Warnings have been published for the following currently installed components.<dl><dt>Jenkins 2.151 core and libraries</dt><dd><a href="https://jenkins.io/security/advisory/2018-12-05/" target="_blank">Multiple security vulnerabilities in Jenkins 2.153 and earlier, and LTS 2.138.3 and earlier</a></dd><dd><a href="https://jenkins.io/security/advisory/2019-01-16/" target="_blank">Multiple security vulnerabilities in Jenkins 2.159 and earlier, and LTS 2.150.1 and earlier</a></dd></dl><dl><dt><a href="https://wiki.jenkins-ci.org/display/JENKINS/Gitlab+Hook+Plugin" target="_blank">Gitlab Hook Plugin 1.4.2</a></dt><dd><a href="https://jenkins.io/security/advisory/2018-05-09/#SECURITY-263" target="_blank">Gitlab API token stored and displayed in plain text</a></dd><dt><a href="https://wiki.jenkins.io/display/JENKINS/Script+Security+Plugin" target="_blank">Script Security Plugin 1.52</a></dt><dd><a href="https://jenkins.io/security/advisory/2019-02-19/#SECURITY-1320" target="_blank">Script Security sandbox bypass</a></dd></dl></div></div><div class="am-message"><div class="alert alert-warning"><form method="post" action="/administrativeMonitor/jenkins.security.csrf.CSRFAdministrativeMonitor/disable"><input name="Submit" type="submit" value="Dismiss" class="submit-button primary" /></form>You have not configured the CSRF issuer. This could be a security issue. For more information, please refer to <a href="https://jenkins.io/redirect/csrf-protection" target="_blank">this page</a>.<p></p>You can change the current configuration using the Security section <a href="/configureSecurity">CSRF Protection</a>.</div></div><div class="am-message"><div class="alert alert-warning"><form method="post" name="jenkins.security.s2m.MasterKillSwitchWarning" action="/administrativeMonitor/jenkins.security.s2m.MasterKillSwitchWarning/act"><input name="examine" type="submit" value="Examine" class="submit-button primary" /><input name="dismiss" type="submit" value="Dismiss" class="submit-button primary" /></form> Agent to master security subsystem is currently off. <a href="https://jenkins.io/redirect/security-144" target="_blank">Please read the documentation</a> and consider turning it on. </div></div><p style="text-align: center; margin: 10px 0 0 0;"><a onclick="document.location.href='/manage';" href="/manage">Manage Jenkins</a></p></div></div><script type="text/javascript"> document.getElementById("header").appendChild(document.getElementById("visible-am-container")); </script></div></div></div></footer></body></html>
+
+Jenkins config file downloaded....
+Checking config file permission....
+file is writable.
+Configuring Git Repo details to Jenkins job..
+Configuration changes have been added..
+Giving exec permission for updated config file
+Permission given
+Uploading the job config file to Jenkins..
+200
+Config file uploaded successfully!!
+Triggering Jenkins Build remotedly...
+201
+Build triggered successfully..!!
+Checking Build Status...
+Build number is 2 
+------Job Executed Successfully-----
+Fetching the Console output from Jenkins..
+------Jenkins Build log------------------
+Started by user cfs
+Building in workspace /var/jenkins_home/workspace/CICDjob
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/SplunkVenkat/maven-project.git # timeout=10
+Fetching upstream changes from https://github.com/SplunkVenkat/maven-project.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/SplunkVenkat/maven-project.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision b56ce6796adce52a4a48bc0322e0784266934a35 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b56ce6796adce52a4a48bc0322e0784266934a35
+Commit message: "corrected"
+ > git rev-list --no-walk b56ce6796adce52a4a48bc0322e0784266934a35 # timeout=10
+Parsing POMs
+Established TCP socket on 41505
+[CICDjob] $ /var/jenkins_home/tools/hudson.model.JDK/jdk9/jdk-9.0.4/bin/java -cp /var/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven35-agent-1.12.jar:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven3/apache-maven-3.6.0/boot/plexus-classworlds-2.5.2.jar:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven3/apache-maven-3.6.0/conf/logging jenkins.maven3.agent.Maven35Main /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven3/apache-maven-3.6.0 /var/jenkins_home/war/WEB-INF/lib/remoting-3.27.jar /var/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven35-interceptor-1.12.jar /var/jenkins_home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.12.jar 41505
+<===[JENKINS REMOTING CAPACITY]===>channel started
+Executing Maven:  -B -f /var/jenkins_home/workspace/CICDjob/pom.xml clean package
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-project:server:jar:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-project:webapp:war:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.example.maven-project:maven-project:pom:1.0-SNAPSHOT
+[WARNING] Reporting configuration should be done in <reporting> section, not in maven-site-plugin <configuration> as reportPlugins parameter. @ line 51, column 24
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[WARNING] The project com.example.maven-project:maven-project:pom:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Maven Project                                                      [pom]
+[INFO] Server                                                             [jar]
+[INFO] Webapp                                                             [war]
+[INFO] 
+[INFO] --------------< com.example.maven-project:maven-project >---------------
+[INFO] Building Maven Project 1.0-SNAPSHOT                                [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ maven-project ---
+[INFO] 
+[INFO] ------------------< com.example.maven-project:server >------------------
+[INFO] Building Server 1.0-SNAPSHOT                                       [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ server ---
+[INFO] Deleting /var/jenkins_home/workspace/CICDjob/server/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ server ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/CICDjob/server/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ server ---
+[INFO] Compiling 1 source file to /var/jenkins_home/workspace/CICDjob/server/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ server ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/CICDjob/server/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ server ---
+[INFO] Compiling 1 source file to /var/jenkins_home/workspace/CICDjob/server/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.11:test (default-test) @ server ---
+[INFO] Surefire report directory: /var/jenkins_home/workspace/CICDjob/server/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.TestGreeter
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[JENKINS] Recording test results
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.dom4j.io.SAXContentHandler to method com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser$LocatorProxy.getEncoding()
+WARNING: Please consider reporting this to the maintainers of org.dom4j.io.SAXContentHandler
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[WARNING] Attempt to (de-)serialize anonymous class hudson.maven.reporters.SurefireArchiver$2; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+[WARNING] Attempt to (de-)serialize anonymous class hudson.maven.reporters.BuildInfoRecorder$1; see: https://jenkins.io/redirect/serialization-of-anonymous-classes/
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ server ---
+[INFO] Building jar: /var/jenkins_home/workspace/CICDjob/server/target/server.jar
+[INFO] 
+[INFO] ------------------< com.example.maven-project:webapp >------------------
+[INFO] Building Webapp 1.0-SNAPSHOT                                       [3/3]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ webapp ---
+[INFO] Deleting /var/jenkins_home/workspace/CICDjob/webapp/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ webapp ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/CICDjob/webapp/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ webapp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ webapp ---
+[debug] execute contextualize
+[INFO] Using 'utf-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/CICDjob/webapp/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ webapp ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.11:test (default-test) @ webapp ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: /var/jenkins_home/workspace/CICDjob/webapp/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ webapp ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [webapp] in [/var/jenkins_home/workspace/CICDjob/webapp/target/webapp]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/var/jenkins_home/workspace/CICDjob/webapp/src/main/webapp]
+[INFO] Webapp assembled in [18 msecs]
+[INFO] Building war: /var/jenkins_home/workspace/CICDjob/webapp/target/webapp.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Maven Project 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Maven Project ...................................... SUCCESS [  0.526 s]
+[INFO] Server ............................................. SUCCESS [  4.957 s]
+[INFO] Webapp ............................................. SUCCESS [  1.069 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.554 s
+[INFO] Finished at: 2019-03-05T08:49:27Z
+[INFO] ------------------------------------------------------------------------
+Waiting for Jenkins to finish collecting data
+[JENKINS] Archiving /var/jenkins_home/workspace/CICDjob/webapp/pom.xml to com.example.maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.pom
+[JENKINS] Archiving /var/jenkins_home/workspace/CICDjob/webapp/target/webapp.war to com.example.maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war
+[JENKINS] Archiving /var/jenkins_home/workspace/CICDjob/server/pom.xml to com.example.maven-project/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT.pom
+[JENKINS] Archiving /var/jenkins_home/workspace/CICDjob/server/target/server.jar to com.example.maven-project/server/1.0-SNAPSHOT/server-1.0-SNAPSHOT.jar
+[JENKINS] Archiving /var/jenkins_home/workspace/CICDjob/pom.xml to com.example.maven-project/maven-project/1.0-SNAPSHOT/maven-project-1.0-SNAPSHOT.pom
+channel stopped
+[CICDjob] $ /bin/bash /tmp/jenkins7914484741698421680.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 54.218.205.249...
+* TCP_NODELAY set
+* Connected to a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com (54.218.205.249) port 8081 (#0)
+* Server auth using Basic with user 'admin'
+> PUT /repository/nexusraw/webapp.war HTTP/1.1
+> Host: a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com:8081
+> Authorization: Basic YWRtaW46YWRtaW4xMjM=
+> User-Agent: curl/7.52.1
+> Accept: */*
+> Content-Length: 2411
+> Expect: 100-continue
+> 
+< HTTP/1.1 100 Continue
+} [2411 bytes data]
+* We are completely uploaded and fine
+< HTTP/1.1 201 Created
+< Date: Tue, 05 Mar 2019 08:49:27 GMT
+< Server: Nexus/3.15.2-01 (OSS)
+< X-Content-Type-Options: nosniff
+< Content-Security-Policy: sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation
+< Content-Length: 0
+< 
+* Curl_http_done: called premature == 0
+100  2411    0     0  100  2411      0  33505 --:--:-- --:--:-- --:--:-- 33957
+* Connection #0 to host a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com left intact
+[CICDjob] $ /bin/bash /tmp/jenkins4001031268657900781.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 54.218.205.249...
+* TCP_NODELAY set
+* Connected to a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com (54.218.205.249) port 8081 (#0)
+* Server auth using Basic with user 'admin'
+> PUT /repository/nexusraw/webapp.war HTTP/1.1
+> Host: a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com:8081
+> Authorization: Basic YWRtaW46YWRtaW4xMjM=
+> User-Agent: curl/7.52.1
+> Accept: */*
+> Content-Length: 2411
+> Expect: 100-continue
+> 
+< HTTP/1.1 100 Continue
+} [2411 bytes data]
+* We are completely uploaded and fine
+< HTTP/1.1 201 Created
+< Date: Tue, 05 Mar 2019 08:49:27 GMT
+< Server: Nexus/3.15.2-01 (OSS)
+< X-Content-Type-Options: nosniff
+< Content-Security-Policy: sandbox allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-top-navigation
+< Content-Length: 0
+< 
+* Curl_http_done: called premature == 0
+100  2411    0     0  100  2411      0  41709 --:--:-- --:--:-- --:--:-- 42298
+* Connection #0 to host a432b79983f1c11e98e1602d2b0abbe9-514435761.us-west-2.elb.amazonaws.com left intact
+Finished: SUCCESS
+Artifact deployment started
+ artifact has been successfully deployed to Tomcat

@@ -1,0 +1,141 @@
+trusty	server	release	20180122	ebs	amd64	ap-northeast-1	ami-1eee8c78			hvm
+trusty	server	release	20180122	ebs	amd64	ap-south-1	ami-b980d1d6			hvm
+trusty	server	release	20180122	ebs	amd64	ap-southeast-1	ami-4b027a37			hvm
+trusty	server	release	20180122	ebs	amd64	ap-southeast-2	ami-66d82604			hvm
+trusty	server	release	20180122	ebs	amd64	ca-central-1	ami-cc199ca8			hvm
+trusty	server	release	20180122	ebs	amd64	eu-central-1	ami-c4b32aab			hvm
+trusty	server	release	20180122	ebs	amd64	eu-west-1	ami-21aace58			hvm
+trusty	server	release	20180122	ebs	amd64	eu-west-2	ami-f5425891			hvm
+trusty	server	release	20180122	ebs	amd64	eu-west-3	ami-9dd86ee0			hvm
+trusty	server	release	20180122	ebs	amd64	sa-east-1	ami-923c70fe			hvm
+trusty	server	release	20180122	ebs	amd64	us-east-1	ami-8fc9fff5			hvm
+trusty	server	release	20180122	ebs	amd64	us-east-2	ami-be96bcdb			hvm
+trusty	server	release	20180122	ebs	amd64	us-west-1	ami-bfcec3df			hvm
+trusty	server	release	20180122	ebs	amd64	us-west-2	ami-7e5fe306			hvm
+trusty	server	release	20180122	ebs-io1	amd64	ap-northeast-1	ami-4ef29028			hvm
+trusty	server	release	20180122	ebs-io1	amd64	ap-south-1	ami-1e81d071			hvm
+trusty	server	release	20180122	ebs-io1	amd64	ap-southeast-1	ami-0f007873			hvm
+trusty	server	release	20180122	ebs-io1	amd64	ap-southeast-2	ami-15d82677			hvm
+trusty	server	release	20180122	ebs-io1	amd64	ca-central-1	ami-f725a093			hvm
+trusty	server	release	20180122	ebs-io1	amd64	eu-central-1	ami-48b32a27			hvm
+trusty	server	release	20180122	ebs-io1	amd64	eu-west-1	ami-c3b6d2ba			hvm
+trusty	server	release	20180122	ebs-io1	amd64	eu-west-2	ami-47425823			hvm
+trusty	server	release	20180122	ebs-io1	amd64	eu-west-3	ami-9ec472e3			hvm
+trusty	server	release	20180122	ebs-io1	amd64	sa-east-1	ami-e03d718c			hvm
+trusty	server	release	20180122	ebs-io1	amd64	us-east-1	ami-33b68049			hvm
+trusty	server	release	20180122	ebs-io1	amd64	us-east-2	ami-b896bcdd			hvm
+trusty	server	release	20180122	ebs-io1	amd64	us-west-1	ami-bfcfc2df			hvm
+trusty	server	release	20180122	ebs-io1	amd64	us-west-2	ami-7159e509			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	ap-northeast-1	ami-7bf0921d			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	ap-south-1	ami-5480d13b			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	ap-southeast-1	ami-8d037bf1			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	ap-southeast-2	ami-51d92733			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	ca-central-1	ami-7727a213			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	eu-central-1	ami-f7b32a98			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	eu-west-1	ami-a6b7d3df			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	eu-west-2	ami-a54359c1			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	eu-west-3	ami-6cc77111			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	sa-east-1	ami-aa236fc6			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	us-east-1	ami-4bc8fe31			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	us-east-2	ami-bb96bcde			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	us-west-1	ami-94cec3f4			hvm
+trusty	server	release	20180122	ebs-ssd	amd64	us-west-2	ami-3a5fe342			hvm
+trusty	server	release	20180122	instance-store	amd64	ap-northeast-1	ami-5d9af83b			hvm
+trusty	server	release	20180122	instance-store	amd64	ap-southeast-1	ami-530b732f			hvm
+trusty	server	release	20180122	instance-store	amd64	ap-southeast-2	ami-52db2530			hvm
+trusty	server	release	20180122	instance-store	amd64	eu-central-1	ami-6f861f00			hvm
+trusty	server	release	20180122	instance-store	amd64	eu-west-1	ami-f95b3f80			hvm
+trusty	server	release	20180122	instance-store	amd64	eu-west-3	ami-b1c472cc			hvm
+trusty	server	release	20180122	instance-store	amd64	sa-east-1	ami-1f226e73			hvm
+trusty	server	release	20180122	instance-store	amd64	us-east-1	ami-23d3e559			hvm
+trusty	server	release	20180122	instance-store	amd64	us-west-1	ami-3dcdc05d			hvm
+trusty	server	release	20180122	instance-store	amd64	us-west-2	ami-c069d5b8			hvm
+trusty	server	release	20180122	ebs	amd64	ap-northeast-1	ami-7dea881b	aki-176bf516		paravirtual
+trusty	server	release	20180122	ebs	amd64	ap-south-1	ami-079fce68	aki-a7305ac8		paravirtual
+trusty	server	release	20180122	ebs	amd64	ap-southeast-1	ami-0d0f7771	aki-503e7402		paravirtual
+trusty	server	release	20180122	ebs	amd64	ap-southeast-2	ami-b5dc22d7	aki-c362fff9		paravirtual
+trusty	server	release	20180122	ebs	amd64	ca-central-1	ami-7021a414	aki-320ebd56		paravirtual
+trusty	server	release	20180122	ebs	amd64	eu-central-1	ami-a8b32ac7	aki-184c7a05		paravirtual
+trusty	server	release	20180122	ebs	amd64	eu-west-1	ami-89abcff0	aki-52a34525		paravirtual
+trusty	server	release	20180122	ebs	amd64	eu-west-2	ami-b94d57dd	aki-8b6369ef		paravirtual
+trusty	server	release	20180122	ebs	amd64	sa-east-1	ami-8a236fe6	aki-5553f448		paravirtual
+trusty	server	release	20180122	ebs	amd64	us-east-1	ami-b8cafcc2	aki-919dcaf8		paravirtual
+trusty	server	release	20180122	ebs	amd64	us-east-2	ami-5d90ba38	aki-da055ebf		paravirtual
+trusty	server	release	20180122	ebs	amd64	us-west-1	ami-fbcfc29b	aki-880531cd		paravirtual
+trusty	server	release	20180122	ebs	amd64	us-west-2	ami-3b5ce043	aki-fc8f11cc		paravirtual
+trusty	server	release	20180122	ebs	i386	ap-northeast-1	ami-62ea8804	aki-136bf512		paravirtual
+trusty	server	release	20180122	ebs	i386	ap-southeast-1	ami-040f7778	aki-ae3973fc		paravirtual
+trusty	server	release	20180122	ebs	i386	ap-southeast-2	ami-dada24b8	aki-cd62fff7		paravirtual
+trusty	server	release	20180122	ebs	i386	eu-central-1	ami-6fbe2700	aki-3e4c7a23		paravirtual
+trusty	server	release	20180122	ebs	i386	eu-west-1	ami-56a8cc2f	aki-68a3451f		paravirtual
+trusty	server	release	20180122	ebs	i386	sa-east-1	ami-d13d71bd	aki-5b53f446		paravirtual
+trusty	server	release	20180122	ebs	i386	us-east-1	ami-78cef802	aki-8f9dcae6		paravirtual
+trusty	server	release	20180122	ebs	i386	us-west-1	ami-0bcec36b	aki-8e0531cb		paravirtual
+trusty	server	release	20180122	ebs	i386	us-west-2	ami-7f60dc07	aki-f08f11c0		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	ap-northeast-1	ami-54ec8e32	aki-176bf516		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	ap-south-1	ami-e59ecf8a	aki-a7305ac8		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	ap-southeast-1	ami-ca0078b6	aki-503e7402		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	ap-southeast-2	ami-e8dd238a	aki-c362fff9		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	ca-central-1	ami-7725a013	aki-320ebd56		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	eu-central-1	ami-98bf26f7	aki-184c7a05		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	eu-west-1	ami-0ea8cc77	aki-52a34525		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	eu-west-2	ami-7a43591e	aki-8b6369ef		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	sa-east-1	ami-d93d71b5	aki-5553f448		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	us-east-1	ami-45cff93f	aki-919dcaf8		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	us-east-2	ami-d791bbb2	aki-da055ebf		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	us-west-1	ami-1fcec37f	aki-880531cd		paravirtual
+trusty	server	release	20180122	ebs-io1	amd64	us-west-2	ami-4063df38	aki-fc8f11cc		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	ap-northeast-1	ami-e3ee8c85	aki-136bf512		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	ap-southeast-1	ami-25017959	aki-ae3973fc		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	ap-southeast-2	ami-89dd23eb	aki-cd62fff7		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	eu-central-1	ami-c0b128af	aki-3e4c7a23		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	eu-west-1	ami-83a8ccfa	aki-68a3451f		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	sa-east-1	ami-72236f1e	aki-5b53f446		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	us-east-1	ami-4bcef831	aki-8f9dcae6		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	us-west-1	ami-f5cfc295	aki-8e0531cb		paravirtual
+trusty	server	release	20180122	ebs-io1	i386	us-west-2	ami-695ce011	aki-f08f11c0		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	ap-northeast-1	ami-5eef8d38	aki-176bf516		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	ap-south-1	ami-5d83d232	aki-a7305ac8		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	ap-southeast-1	ami-c6027aba	aki-503e7402		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	ap-southeast-2	ami-6ed8260c	aki-c362fff9		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	ca-central-1	ami-6b1f9a0f	aki-320ebd56		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	eu-central-1	ami-06b52c69	aki-184c7a05		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	eu-west-1	ami-f1b5d188	aki-52a34525		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	eu-west-2	ami-6a4d570e	aki-8b6369ef		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	sa-east-1	ami-253c7049	aki-5553f448		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	us-east-1	ami-90c8feea	aki-919dcaf8		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	us-east-2	ami-1c90ba79	aki-da055ebf		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	us-west-1	ami-99cec3f9	aki-880531cd		paravirtual
+trusty	server	release	20180122	ebs-ssd	amd64	us-west-2	ami-4961dd31	aki-fc8f11cc		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	ap-northeast-1	ami-8bef8ded	aki-136bf512		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	ap-southeast-1	ami-c5027ab9	aki-ae3973fc		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	ap-southeast-2	ami-ecdd238e	aki-cd62fff7		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	eu-central-1	ami-23b0294c	aki-3e4c7a23		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	eu-west-1	ami-02a8cc7b	aki-68a3451f		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	sa-east-1	ami-7c3c7010	aki-5b53f446		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	us-east-1	ami-2ec9ff54	aki-8f9dcae6		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	us-west-1	ami-a2cfc2c2	aki-8e0531cb		paravirtual
+trusty	server	release	20180122	ebs-ssd	i386	us-west-2	ami-6d5fe315	aki-f08f11c0		paravirtual
+trusty	server	release	20180122	instance-store	amd64	ap-northeast-1	ami-4b87e52d	aki-176bf516		paravirtual
+trusty	server	release	20180122	instance-store	amd64	ap-northeast-2	ami-9a8526f4	aki-01a66b6f		paravirtual
+trusty	server	release	20180122	instance-store	amd64	ap-south-1	ami-619ecf0e	aki-a7305ac8		paravirtual
+trusty	server	release	20180122	instance-store	amd64	ap-southeast-1	ami-b21169ce	aki-503e7402		paravirtual
+trusty	server	release	20180122	instance-store	amd64	ap-southeast-2	ami-32df2150	aki-c362fff9		paravirtual
+trusty	server	release	20180122	instance-store	amd64	ca-central-1	ami-fe199c9a	aki-320ebd56		paravirtual
+trusty	server	release	20180122	instance-store	amd64	eu-central-1	ami-64841d0b	aki-184c7a05		paravirtual
+trusty	server	release	20180122	instance-store	amd64	eu-west-1	ami-ac4b2fd5	aki-52a34525		paravirtual
+trusty	server	release	20180122	instance-store	amd64	eu-west-2	ami-344d5750	aki-8b6369ef		paravirtual
+trusty	server	release	20180122	instance-store	amd64	sa-east-1	ami-7c216d10	aki-5553f448		paravirtual
+trusty	server	release	20180122	instance-store	amd64	us-east-1	ami-3aeed840	aki-919dcaf8		paravirtual
+trusty	server	release	20180122	instance-store	amd64	us-east-2	ami-5c90ba39	aki-da055ebf		paravirtual
+trusty	server	release	20180122	instance-store	amd64	us-west-1	ami-78303d18	aki-880531cd		paravirtual
+trusty	server	release	20180122	instance-store	amd64	us-west-2	ami-356fd34d	aki-fc8f11cc		paravirtual
+trusty	server	release	20180122	instance-store	i386	ap-northeast-1	ami-deaac8b8	aki-136bf512		paravirtual
+trusty	server	release	20180122	instance-store	i386	ap-southeast-1	ami-051b6379	aki-ae3973fc		paravirtual
+trusty	server	release	20180122	instance-store	i386	ap-southeast-2	ami-fede209c	aki-cd62fff7		paravirtual
+trusty	server	release	20180122	instance-store	i386	eu-central-1	ami-498e1726	aki-3e4c7a23		paravirtual
+trusty	server	release	20180122	instance-store	i386	eu-west-1	ami-1b452162	aki-68a3451f		paravirtual
+trusty	server	release	20180122	instance-store	i386	sa-east-1	ami-f9216d95	aki-5b53f446		paravirtual
+trusty	server	release	20180122	instance-store	i386	us-east-1	ami-db083ea1	aki-8f9dcae6		paravirtual
+trusty	server	release	20180122	instance-store	i386	us-west-1	ami-da313cba	aki-8e0531cb		paravirtual
+trusty	server	release	20180122	instance-store	i386	us-west-2	ami-2b70cc53	aki-f08f11c0		paravirtual

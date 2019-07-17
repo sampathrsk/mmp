@@ -1,0 +1,19 @@
+#!/bin/bash
+rm -r /root/.helm/
+
+./get_helm.sh
+sleep 30
+
+kubectl apply -f kube-prometheus-grafana/helm-rbac.yaml
+sleep 60
+helm init --service-account helm
+sleep 30
+
+
+helm install --name kube-prometheus kube-prometheus-grafana/helm/prometheus -f kube-prometheus-grafana/values.yaml --namespace monitoring
+sleep 30
+helm install --name kube-grafana kube-prometheus-grafana/helm/grafana -f kube-prometheus-grafana/values.yaml --namespace monitoring
+sleep 30
+rm grafana.txt
+kubectl get svc grafana -n monitoring \
+    -o jsonpath="{.status.loadBalancer.ingress[*].hostname}" > /home/ubuntu/venv/mmp/aws/grafana.txt

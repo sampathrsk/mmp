@@ -1,0 +1,6 @@
+{
+  "name": "raw",
+  "type": "groovy",
+  "content": "repository.createRawHosted('nexusraw')"
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "maven",
+  "type": "groovy",
+  "content": "repository.createMavenHosted('nexusmaven')"
+}
+

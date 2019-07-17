@@ -1,0 +1,9 @@
+#table{
+    display: grid;
+    grid-template: auto/1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-items: center;
+}
+

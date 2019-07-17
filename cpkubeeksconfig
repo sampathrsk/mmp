@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ ! -f "/root/.kube/config-sample-eks" ]; then
+cp /root/.kube/config-sample-eks_bk /root/.kube/config-sample-eks
+fi
+

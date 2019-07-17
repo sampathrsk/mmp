@@ -1,0 +1,46 @@
+#!/bin/bash
+#if [ ! -f "/root/.kube/config-sample-eks" ]; then
+#cp /root/.kube/config-sample-eks_bk /root/.kube/config-sample-eks
+#fi
+
+set x
+export KUBECONFIG=$KUBECONFIG:~/.kube/config-sample-eks
+kubectl get svc
+kubectl apply -f aws-auth-cm.yaml
+sleep 30
+
+kubectl create -f nexus-deployment.yaml
+kubectl create -f nexus-service.yaml
+kubectl create -f jenkins-deployment.yaml
+kubectl create -f jenkins-service.yaml
+kubectl create -f tomcat-deployment.yaml
+kubectl create -f tomcat-service.yaml
+kubectl create -f sonarqube-deployment.yaml
+kubectl create -f sonarqube-service.yaml
+
+
+sleep 90
+kubectl get services -o wide
+
+rm jenkins.txt nexus.txt pods.txt tomcat.txt sonarqube.txt jen-pod.txt
+
+kubectl get svc jenkins-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].hostname}" > /home/ubuntu/venv/mmp/aws/jenkins.txt
+kubectl get svc nexus-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].hostname}" > /home/ubuntu/venv/mmp/aws/nexus.txt
+kubectl get svc tomcat-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].hostname}" > /home/ubuntu/venv/mmp/aws/tomcat.txt
+kubectl get svc sonarqube-service -n default \
+    -o jsonpath="{.status.loadBalancer.ingress[*].hostname}" > /home/ubuntu/venv/mmp/aws/sonarqube.txt
+echo 'Load Balance Details are Copied'
+
+sleep 30
+sh /home/ubuntu/venv/mmp/aws/groovy/sonarqube.sh
+
+sleep 30
+
+sh nexus-repo.sh $(cat nexus.txt)
+sleep 120
+sh jenkinsjobconfig.sh $(cat jenkins.txt) $(cat git-reponame.txt) "" $(cat nexus.txt)
+sleep 120
+sh tom.sh

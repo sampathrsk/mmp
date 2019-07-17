@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMP</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="logo">
+            <img src="{% static 'assets/img/Capgemini-Logo-2017.svg' %}" alt="Capgemini">
+        </div>
+        <h1>MMP</h1>
+        <div class="logout">
+            <h2>{{ logout_message }}</h2>
+            <input type="button" value="Login" onclick="location.href='/login/'">
+        </div>
+    </body>
+</html>

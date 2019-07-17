@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp jenkinslog.html eks/templates/eks/jenkinslog.html

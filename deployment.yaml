@@ -1,0 +1,18 @@
+apiVersion: apps/v1 kind: Deployment metadata:
+ name: jen-deployment
+ labels:
+   app: jen spec:
+ template:
+  metadata:
+   name: jen-pod
+   labels:
+    app: jen
+  spec:
+    containers:
+     - name: jen
+       image: sampathrsk/groovy:lts
+#Mention the number of pods it has to create
+ replicas: 1
+ selector:
+  matchLabels:
+    app: jen

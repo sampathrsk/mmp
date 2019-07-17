@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MMP</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="logo">
+            <img src="{% static 'assets/img/Capgemini-Logo-2017.svg' %}" alt="Capgemini">
+        </div>
+        <h1>MMP</h1>
+        {{ login_form.non_field_errors }}
+        <form class="login-form" action="/accounts/login/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+            <table cellspacing="50">
+                {% if errors %}
+                <tr>
+                    <td colspan="2"><font color="red">Your username and password didn't match. Please try again</font></td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td>
+                        <label for="username">User name</label>
+                    </td>
+                    <td>
+                        {{ login_form.username }}
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <label for="password">Password*</label>
+                    </td>
+                    <td>
+                        {{ login_form.password }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="login" value="Login">
+                    </td>
+                    <td>
+                        <input type="button" name="forgot" value="Forgot Password?" onclick="location.href='/forgot/'">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" name="signup" value="Sign Up" onclick="location.href='/register/'">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

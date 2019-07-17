@@ -1,0 +1,21 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/ftable.css' %}">
+    </head>
+    <body>
+        <div id="table">
+            <div><b>Cluster Name</b></div>
+            <div><b>Resource Group Name</b></div>
+            <div><b>Worker Nodes</b></div>
+            <div><b>Action</b></div>
+            {% for cluster in clusters %}
+                <div>{{cluster.AksClusterName}}</div>
+                <div>{{cluster.ResourceGroupName}}</div>
+                <div>{{cluster.WorkerNo}}</div>
+                <button type="submit" formmethod="GET" formaction="/terminate/{{cluster.ClusterName}}">Terminate</button>
+            {% endfor %}
+        </div>
+    </body>
+</html>
+
