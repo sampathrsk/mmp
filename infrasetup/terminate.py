@@ -10,10 +10,10 @@ import time
 #elb = boto3.client('elb', region_name = reg)
 #autoscaling = boto3.client('autoscaling', region_name = reg)
 
-#MasterASG = input("Enter MasterASG name:")
-#SlaveASG = input("Enter SlaveASG name:")
+#MainASG = input("Enter MainASG name:")
+#SubordinateASG = input("Enter SubordinateASG name:")
 
-def cluster_termination(reg,ec2,client,elb,autoscaling,MasterASG,SlaveASG):
+def cluster_termination(reg,ec2,client,elb,autoscaling,MainASG,SubordinateASG):
 
 	describeinstances = autoscaling.describe_auto_scaling_instances()
 	length = len(describeinstances['AutoScalingInstances'])
@@ -22,18 +22,18 @@ def cluster_termination(reg,ec2,client,elb,autoscaling,MasterASG,SlaveASG):
 	        instanceid.append(describeinstances['AutoScalingInstances'][i]['InstanceId'])
 	print instanceid
 
-	updateautoscalinggroupmaster = autoscaling.update_auto_scaling_group(
-	        AutoScalingGroupName = MasterASG,
+	updateautoscalinggroupmain = autoscaling.update_auto_scaling_group(
+	        AutoScalingGroupName = MainASG,
 	        MinSize = 0,
 	        DesiredCapacity = 0,)
 
-	updateautoscalinggroupslave = autoscaling.update_auto_scaling_group(
-                AutoScalingGroupName = SlaveASG,
+	updateautoscalinggroupsubordinate = autoscaling.update_auto_scaling_group(
+                AutoScalingGroupName = SubordinateASG,
                 MinSize = 0,
                 DesiredCapacity = 0,)
 
-	print updateautoscalinggroupmaster
-	print updateautoscalinggroupslave
+	print updateautoscalinggroupmain
+	print updateautoscalinggroupsubordinate
 
 #detachinstances = autoscaling.detach_instances(
 #               InstanceIds = instanceid,
@@ -42,36 +42,36 @@ def cluster_termination(reg,ec2,client,elb,autoscaling,MasterASG,SlaveASG):
 
 
 
-	Loadbalancerdeletemaster = elb.delete_load_balancer(
-	        LoadBalancerName = MasterASG)
+	Loadbalancerdeletemain = elb.delete_load_balancer(
+	        LoadBalancerName = MainASG)
 
-	Loadbalancerdeleteslave = elb.delete_load_balancer(
-                LoadBalancerName = SlaveASG)
+	Loadbalancerdeletesubordinate = elb.delete_load_balancer(
+                LoadBalancerName = SubordinateASG)
 
-	print Loadbalancerdeletemaster
-	print Loadbalancerdeleteslave
+	print Loadbalancerdeletemain
+	print Loadbalancerdeletesubordinate
 
 
 	time.sleep(200)
 
 
-	Autoscalinggroupdeletemaster = autoscaling.delete_auto_scaling_group(
-	        AutoScalingGroupName = MasterASG)
-	Autoscalinggroupdeleteslave = autoscaling.delete_auto_scaling_group(
-                AutoScalingGroupName = SlaveASG)
+	Autoscalinggroupdeletemain = autoscaling.delete_auto_scaling_group(
+	        AutoScalingGroupName = MainASG)
+	Autoscalinggroupdeletesubordinate = autoscaling.delete_auto_scaling_group(
+                AutoScalingGroupName = SubordinateASG)
 
-	print Autoscalinggroupdeletemaster
-	print Autoscalinggroupdeleteslave
+	print Autoscalinggroupdeletemain
+	print Autoscalinggroupdeletesubordinate
 
 	
 	
-	Launchconfigurationdeletemaster = autoscaling.delete_launch_configuration(
-	        LaunchConfigurationName = MasterASG)
-	Launchconfigurationdeleteslave = autoscaling.delete_launch_configuration(
-                LaunchConfigurationName = SlaveASG)
+	Launchconfigurationdeletemain = autoscaling.delete_launch_configuration(
+	        LaunchConfigurationName = MainASG)
+	Launchconfigurationdeletesubordinate = autoscaling.delete_launch_configuration(
+                LaunchConfigurationName = SubordinateASG)
 
-	#print Launchconfigurationdeletemaster
-	#print Launchconfigurationdeleteslave
+	#print Launchconfigurationdeletemain
+	#print Launchconfigurationdeletesubordinate
 
 #for i in range(0,length):
 #       instances = ec2.Instance(instanceid[i])
@@ -106,4 +106,4 @@ def cluster_termination(reg,ec2,client,elb,autoscaling,MasterASG,SlaveASG):
 	#response = vpc[0].delete()
 	#print response
 
-#terminate = cluster_termination(reg,ec2,client,elb,autoscaling,MasterASG,SlaveASG)
+#terminate = cluster_termination(reg,ec2,client,elb,autoscaling,MainASG,SubordinateASG)

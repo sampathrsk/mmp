@@ -82,16 +82,16 @@ def awseksview(request):
         eks = boto3.client('eks',region_name='us-west-2')
 	ekstemp_refresh = EksTempInfo.objects.all()
 	ekstemp_refresh.delete()
-	ekstempinfo = EksTempInfo.objects.create(MasterStack=stack_name,EksClusterName=cluster_name,WorkersStack=workers_stack_name,WorkerNo=worker_nodes)
+	ekstempinfo = EksTempInfo.objects.create(MainStack=stack_name,EksClusterName=cluster_name,WorkersStack=workers_stack_name,WorkerNo=worker_nodes)
         cloudformation = boto3.client('cloudformation',region_name='us-west-2')
-        stackmaster=CreateStack(cloudformation,stack_name)
+        stackmain=CreateStack(cloudformation,stack_name)
         print("\nThe Stack creation is below")
-        print stackmaster
-        stackmaster1 = str(stackmaster)
+        print stackmain
+        stackmain1 = str(stackmain)
         with open("/home/ubuntu/venv/mmp/aws/jenkinslog.html", "a+") as f:
             f.write(breakrule)
         with open("/home/ubuntu/venv/mmp/aws/jenkinslog.html", "a+") as f:
-            f.write(stackmaster1)
+            f.write(stackmain1)
         time.sleep(120)
         outputs=DescribeStackoutputs(cloudformation,stack_name)
         print("\nThe Stack output is below")
@@ -149,7 +149,7 @@ def awseksview(request):
         monitoringipfile = open("/home/ubuntu/venv/mmp/aws/grafana.txt","r")
         monitoringipread = monitoringipfile.read()
         monitoringip = monitoringipread+":3000"
-        eksclusterinfo = EksInfo.objects.create(MasterStack=stack_name,EksClusterName=cluster_name,WorkersStack=workers_stack_name,WorkerNo=worker_nodes,ExternalIP=externalip,MonitoringIP=monitoringip)
+        eksclusterinfo = EksInfo.objects.create(MainStack=stack_name,EksClusterName=cluster_name,WorkersStack=workers_stack_name,WorkerNo=worker_nodes,ExternalIP=externalip,MonitoringIP=monitoringip)
         subprocess.call(['./rungrafana'])
         return HttpResponse(None)
     #else:
@@ -175,11 +175,11 @@ def awseksterminate(request):
         EksInfo.objects.filter(EksClusterName=cluster_name).delete()
 	eks = boto3.client('eks',region_name='us-west-2')
         cloudformation = boto3.client('cloudformation',region_name='us-west-2')
-        stack_name = details.MasterStack
+        stack_name = details.MainStack
         stack_name_workernodes = details.WorkersStack
 	workerstacktermination = delete_stack(cloudformation,stack_name_workernodes)
         clusterdelete = delete_cluster(eks,cluster_name)
-        masterstacktermination = delete_stack(cloudformation,stack_name)
+        mainstacktermination = delete_stack(cloudformation,stack_name)
         return HttpResponse(None)
         
 def stacklist(request):

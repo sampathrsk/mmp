@@ -61,7 +61,7 @@ def clusternamecheck(request):
 		
 	return JsonResponse({'clusternamecheck': Noclusters})
 	
-def masterasgnamecheck(request):
+def mainasgnamecheck(request):
         region = request.GET.get('region', None)
         name = request.GET.get('name', None)
         if name!='':
@@ -69,20 +69,20 @@ def masterasgnamecheck(request):
                 from my_definitions import fetchclustername
                 details = fetchclustername(region)
                 if details['length'] == 0:
-                        Nomasterasg = True
+                        Nomainasg = True
                 else:
                         if any(i in name for i in details['z']):
-                                Nomasterasg = False
+                                Nomainasg = False
                         else:
-                                Nomasterasg = True
+                                Nomainasg = True
         else:
-                Nomasterasg = False
+                Nomainasg = False
 
-        #print Nomasterasg
+        #print Nomainasg
 
-        return JsonResponse({'masterasgnamecheck': Nomasterasg})
+        return JsonResponse({'mainasgnamecheck': Nomainasg})
 
-def slaveasgnamecheck(request):
+def subordinateasgnamecheck(request):
         region = request.GET.get('region', None)
         name = request.GET.get('name', None)
         if name!='':
@@ -90,18 +90,18 @@ def slaveasgnamecheck(request):
                 from my_definitions import fetchclustername
                 details = fetchclustername(region)
                 if details['length'] == 0:
-                        Noslaveasg = True
+                        Nosubordinateasg = True
                 else:
                         if any(i in name for i in details['z']):
-                                Noslaveasg = False
+                                Nosubordinateasg = False
                         else:
-                                Noslaveasg = True
+                                Nosubordinateasg = True
         else:
-                Noslaveasg = False
+                Nosubordinateasg = False
 
-        #print Noslaveasg
+        #print Nosubordinateasg
 
-        return JsonResponse({'slaveasgnamecheck': Noslaveasg})
+        return JsonResponse({'subordinateasgnamecheck': Nosubordinateasg})
 
 
 @login_required
@@ -115,31 +115,31 @@ def awsview(request):
       print reg
       vpc = form.cleaned_data['vpc']
       print vpc
-      MasterASG = request.POST.__getitem__('MasterASG')
-      #print MasterASG
+      MainASG = request.POST.__getitem__('MainASG')
+      #print MainASG
       launch_config = form.cleaned_data['launch_config']
       #print launch_config
-      SlaveASG = request.POST.__getitem__('SlaveASG')
-      #print SlaveASG
+      SubordinateASG = request.POST.__getitem__('SubordinateASG')
+      #print SubordinateASG
       instancetypeM=form.cleaned_data['itypeM']
       #print instancetypeM
       instancetypeS=form.cleaned_data['itypeS']
       #print instancetypeS
       ver=form.cleaned_data['version']
       #print ver
-      master=int(request.POST.__getitem__('master_nodes'))
-      slave=int(request.POST.__getitem__('slave_nodes'))
+      main=int(request.POST.__getitem__('main_nodes'))
+      subordinate=int(request.POST.__getitem__('subordinate_nodes'))
       ec2 = boto3.resource('ec2', region_name = reg)
       client = boto3.client('ec2', region_name = reg)
       elb = boto3.client('elb', region_name = reg)
       autoscaling = boto3.client('autoscaling', region_name = reg)
       from provisioning_default import instance_provisioning
       #from terminate0 import instance_termination
-      instance_provisioning(reg,vpc,ver,instancetypeM,ec2,client,elb,autoscaling,launch_config,master,'master',MasterASG)
-      instance_provisioning(reg,vpc,ver,instancetypeS,ec2,client,elb,autoscaling,launch_config,slave,'slave',SlaveASG)
+      instance_provisioning(reg,vpc,ver,instancetypeM,ec2,client,elb,autoscaling,launch_config,main,'main',MainASG)
+      instance_provisioning(reg,vpc,ver,instancetypeS,ec2,client,elb,autoscaling,launch_config,subordinate,'subordinate',SubordinateASG)
       startTime = datetime.now()
-      #clusterdetails = Storedetailsindatabase(clustername,reg,master,instancetypeM,slave,instancetypeS,MasterASG,SlaveASG)
-      clusterdetails = clusterdetails_new.objects.create(clustername=clustername,region=reg,masterno=master,instatypem=instancetypeM,slaveno=slave,instatypes=instancetypeS,masterasg=MasterASG,slaveasg=SlaveASG)
+      #clusterdetails = Storedetailsindatabase(clustername,reg,main,instancetypeM,subordinate,instancetypeS,MainASG,SubordinateASG)
+      clusterdetails = clusterdetails_new.objects.create(clustername=clustername,region=reg,mainno=main,instatypem=instancetypeM,subordinateno=subordinate,instatypes=instancetypeS,mainasg=MainASG,subordinateasg=SubordinateASG)
       time.sleep(25)
       describeinstances = autoscaling.describe_auto_scaling_instances()
       length = len(describeinstances['AutoScalingInstances'])
@@ -178,15 +178,15 @@ def clustertable(request):
 def clusterterminate(request):
         cluster_name = request.POST.get('clustername',False)
         details = clusterdetails_new.objects.get(clustername=cluster_name)
-        masterasg = details.masterasg
-        print masterasg
-        slaveasg = details.slaveasg
+        mainasg = details.mainasg
+        print mainasg
+        subordinateasg = details.subordinateasg
         reg = details.region
         ec2 = boto3.resource('ec2', region_name = reg)
 	client = boto3.client('ec2', region_name = reg)
 	elb = boto3.client('elb', region_name = reg)
 	autoscaling = boto3.client('autoscaling', region_name = reg)
-	terminatecluster = terminate.cluster_termination(reg,ec2,client,elb,autoscaling,masterasg,slaveasg)
+	terminatecluster = terminate.cluster_termination(reg,ec2,client,elb,autoscaling,mainasg,subordinateasg)
         clusterdetails_new.objects.filter(clustername=cluster_name).delete()
 
 def guestbook(request):

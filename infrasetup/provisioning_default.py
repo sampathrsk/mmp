@@ -23,7 +23,7 @@ keyname = 'sample'
 
 def instance_provisioning(reg,vpc,ver,instancetype,ec2,client,elb,autoscaling,launch_config,max_count,flag,ASG):
     try:
-	if flag == 'slave' and vpc == 'Create new':
+	if flag == 'subordinate' and vpc == 'Create new':
 		vpc = 'test_vpc'
 	if vpc != "Create new":
 	        response = ifvpcexists(vpc,ec2)

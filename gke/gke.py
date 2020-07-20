@@ -12,7 +12,7 @@ zone = 'us-central1-a'
 def gke_create_cluster(cluster_name,nodes,disksize):
   cluster = {
   "name": cluster_name,
-      "master_auth": {
+      "main_auth": {
         "username": "admin",
       },
       "logging_service": "logging.googleapis.com",
@@ -47,7 +47,7 @@ def gke_create_cluster(cluster_name,nodes,disksize):
       ],
       "network_policy": {},
       "ip_allocation_policy": {},
-      "master_authorized_networks_config": {},
+      "main_authorized_networks_config": {},
       "initial_cluster_version": "1.10.9-gke.5"
   }
   return cluster

@@ -76,10 +76,10 @@ def awsfgterminate(request):
 
         
         #cloudformation = boto3.client('cloudformation',region_name='us-west-2')
-        #stack_name = details.MasterStack
+        #stack_name = details.MainStack
         #stack_name_workernodes = details.WorkersStack
 	#workerstacktermination = delete_stack(cloudformation,stack_name_workernodes)
         #clusterdelete = delete_cluster(eks,cluster_name)
-        #masterstacktermination = delete_stack(cloudformation,stack_name)
+        #mainstacktermination = delete_stack(cloudformation,stack_name)
         
 
