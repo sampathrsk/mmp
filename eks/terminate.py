@@ -23,4 +23,4 @@ def delete_stack(cloudformation,stack_name_workernodes):
 #print workerstacktermination
 #clusterdelete=delete_cluster(eks,cluster_name)
 #time.sleep(120)
-#masterstacktermination=delete_stack(cloudformation,stack_name)
+#mainstacktermination=delete_stack(cloudformation,stack_name)

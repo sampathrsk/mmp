@@ -8,9 +8,9 @@ from django.db import models
 class clusterdetails_new(models.Model):
     clustername = models.CharField(max_length=40)
     region = models.CharField(max_length=40)
-    masterno = models.PositiveIntegerField()
+    mainno = models.PositiveIntegerField()
     instatypem = models.CharField(max_length=30)
-    slaveno = models.PositiveIntegerField()
+    subordinateno = models.PositiveIntegerField()
     instatypes = models.CharField(max_length=30)
-    masterasg = models.CharField(max_length=40)
-    slaveasg = models.CharField(max_length=40)
+    mainasg = models.CharField(max_length=40)
+    subordinateasg = models.CharField(max_length=40)

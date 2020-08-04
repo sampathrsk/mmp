@@ -261,7 +261,7 @@ def get_externalip(eks):
 #cluster_name = input('Enter the name of the eks cluster:')
 #stack_name_workernodes = input('stack name of the workers:')
 #workernodes = input('Please enter the no of worker nodes needed:')
-#stackmaster=CreateStack(cloudformation,stack_name)
+#stackmain=CreateStack(cloudformation,stack_name)
 #time.sleep(120)
 #outputs=DescribeStackoutputs(cloudformation,stack_name)
 #cluster=createcluster(eks,outputs,cluster_name)

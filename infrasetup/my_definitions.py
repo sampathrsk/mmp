@@ -15,11 +15,11 @@ keyname = 'sample'
 
 def user_data_fetch(flag):
     try:
-	if flag == 'master':
+	if flag == 'main':
 		with open("script.txt",'r') as i:
     			lines = i.readlines()
 	else:
-		with open("slave-script.txt",'r') as i:
+		with open("subordinate-script.txt",'r') as i:
 			lines = i.readlines()
 	x = ''
 	for i in lines:
